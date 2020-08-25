@@ -62,7 +62,7 @@ void AppEngine::step()
         else
             {
                 searchtime = searchTimer.elapsed()/1000;
-                if(searchTimer.elapsed()>360*10000) searchtime=0;
+                if(searchTimer.elapsed()>360*1000) searchtime=0;
                 if(searchtime%60<10)timer1->setText("Czas szukania: " +QString::number(searchtime/60)+":0"+QString::number(searchtime%60));
                 else
                 timer1->setText("Czas szukania: "+QString::number(searchtime/60)+":"+QString::number(searchtime%60));
@@ -70,7 +70,7 @@ void AppEngine::step()
         if(core->GetStop()==0)
             {
         fasttime = fastTimer.elapsed()/1000;
-        if(fastTimer.elapsed()>360*10000) fasttime=0;
+        if(fastTimer.elapsed()>360*1000) fasttime=0;
         if(fasttime%60<10)timer2->setText("Czas przejścia: "+QString::number(fasttime/60)+":0"+QString::number(fasttime%60));
         else
         timer2->setText("Czas przejścia: "+QString::number(fasttime/60)+":"+QString::number(fasttime%60));
